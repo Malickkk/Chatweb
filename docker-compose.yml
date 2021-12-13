@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:  
+  redis:
+    image: redis:5
+    ports:
+      - 6379:6379
+
+  website: 
+    build: .
+    volumes: 
+      - .:/usr/src/app/
+    ports: 
+      - 8080:8080
+    
+
